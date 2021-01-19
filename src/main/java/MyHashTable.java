@@ -7,7 +7,7 @@ public class MyHashTable {
     public MyHashTable(int tableLength, int listElemCount) {
         this.hashTable = new List[tableLength];
         for (int i = 0; i < tableLength; i++) {
-            this.hashTable[i] = new List(this);
+            this.hashTable[i] = new List();
         }
         this.maxListElemCount = listElemCount;
     }
@@ -20,7 +20,7 @@ public class MyHashTable {
 
         for (int[] arKeyValue:arKeysValues) {
             int index = hash(arKeyValue[1]);
-            this.hashTable[index] = new List(this);
+            this.hashTable[index] = new List();
             this.hashTable[index].addToTail(arKeyValue[1]);
         }
 
@@ -31,8 +31,10 @@ public class MyHashTable {
 
     public void addElem(int newVal) {
         int index = hash(newVal);
-
         this.hashTable[index].addToTail(newVal);
+        if (this.hashTable[index].getListSize() > this.maxListElemCount) {
+            this.rebuildHashTable();
+        }
     }
 
     /**

@@ -5,14 +5,16 @@ public class List {
     private Node tail;
 
     private int listSize;
-    private MyHashTable table;
 
     //инициализация списка
-    public List(MyHashTable table) {
+    public List() {
         this.head = null;
         this.tail = null;
         this.listSize = 0;
-        this.table = table;
+    }
+
+    public int getListSize() {
+        return this.listSize;
     }
 
     public void getValues(ArrayList<int[]> arKeyValue, int key) {
@@ -38,12 +40,6 @@ public class List {
             this.tail = newNode;
 
             this.listSize++;
-
-            if (this.listSize > this.table.maxListElemCount) {
-                //перестраиваем хэш-таблицу
-                this.table.rebuildHashTable();
-            }
-
             return;
         }
 

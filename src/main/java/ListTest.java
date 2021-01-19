@@ -12,7 +12,7 @@ class ListTest {
 
         int newVal = 10;
 
-        List testList = new List(this.table);
+        List testList = new List();
         testList.addToTail(newVal);
 
         Node nodeToFind = testList.findNodeByValue(newVal);
@@ -30,7 +30,7 @@ class ListTest {
         int index = 0;
         int newVal = 1000;
 
-        List testList = new List(this.table);
+        List testList = new List();
         testList.addElementByIndex(index, newVal);
 
         Node nodeToFind = testList.findNodeByValue(newVal);
@@ -48,7 +48,7 @@ class ListTest {
         int index = 0;
         int newVal = 2000;
 
-        List testList = new List(this.table);
+        List testList = new List();
         testList.addElementByIndex(index, newVal);
 
         Node nodeToFind = testList.findNodeByValue(newVal);
@@ -75,7 +75,7 @@ class ListTest {
         int index = 0;
         int newVal = 3000;
 
-        List testList = new List(this.table);
+        List testList = new List();
         testList.addElementByIndex(index, newVal);
 
         Node nodeToFind = testList.findNodeByValue(newVal);
@@ -101,7 +101,7 @@ class ListTest {
         int index = 0;
         int newVal = 30;
 
-        List testList = new List(this.table);
+        List testList = new List();
         testList.addElementByIndex(index, newVal);
 
         Node nodeToFind = testList.findNodeByValue(newVal);
