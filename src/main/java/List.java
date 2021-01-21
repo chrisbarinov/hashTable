@@ -21,7 +21,7 @@ public class List {
         Node i = this.head;
 
         while (i != null) {
-            arKeyValue.add(new int[] {key, i.getValue()});
+            arKeyValue.add(new int[] {key, (int) i.getValue()});
             i = i.getNextNode();
         }
     }
@@ -29,7 +29,7 @@ public class List {
     //добавление в конец списка
     public void addToTail(int newElem) {
 
-        Node newNode = new Node(newElem);
+        Node<Integer> newNode = new Node<Integer>(newElem);
 
         //Если это первый эл-т
         if (this.head == null) {
@@ -57,7 +57,7 @@ public class List {
         Node i = this.head;
 
         while (i != null) {
-            if (i.getValue() == valToFind) {
+            if ((int) i.getValue() == valToFind) {
                 return i;
             }
             i = i.getNextNode();

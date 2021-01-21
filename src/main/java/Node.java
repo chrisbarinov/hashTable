@@ -1,10 +1,10 @@
-public class Node {
-    private int val;
+public class Node <T> {
+    private T val;
 
     private Node nextNode = null;
     private Node prevNode = null;
 
-    public Node(int val) {
+    public Node(T val) {
         this.setValue(val);
     }
 
@@ -16,7 +16,7 @@ public class Node {
         this.prevNode = prevNode;
     }
 
-    public int getValue() {
+    public T getValue() {
         return this.val;
     }
 
@@ -28,7 +28,7 @@ public class Node {
         return this.prevNode;
     }
 
-    public void setValue(int val) {
+    public void setValue(T val) {
         this.val = val;
     }
 
