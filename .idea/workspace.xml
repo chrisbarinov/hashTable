@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9715ef3a-417c-4a09-b865-116effdc2961" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hashTable.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hashTable.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LaunchHashTable.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MyHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MyHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MyHashTableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MyHashTableTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LaunchHashTable.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/List.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/List.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ListTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MyHashTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MyHashTable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MyHashTableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MyHashTableTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Node.class" afterDir="false" />
     </list>
@@ -70,15 +82,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in hashTable">
-    <configuration name="All in hashTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hashTable" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.MyHashTableTest.deleteByKey">
     <configuration name="ListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hashTable" />
       <option name="PACKAGE_NAME" value="" />
@@ -88,30 +92,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyHashTableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ListTest.addElementByIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hashTable" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyHashTableTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyHashTableTest.addElem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hashTable" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyHashTableTest" />
-      <option name="METHOD_NAME" value="addElem" />
+      <option name="MAIN_CLASS_NAME" value="ListTest" />
+      <option name="METHOD_NAME" value="addElementByIndex" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyHashTableTest.getByKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ListTest.deleteNodeByIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hashTable" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ListTest" />
+      <option name="METHOD_NAME" value="deleteNodeByIndex" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListTest.deleteNodeByValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hashTable" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ListTest" />
+      <option name="METHOD_NAME" value="deleteNodeByValue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyHashTableTest.deleteByKey" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hashTable" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyHashTableTest" />
-      <option name="METHOD_NAME" value="getByKey" />
+      <option name="METHOD_NAME" value="deleteByKey" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in hashTable" />
+        <item itemvalue="JUnit.MyHashTableTest.deleteByKey" />
+        <item itemvalue="JUnit.ListTest.addElementByIndex" />
+        <item itemvalue="JUnit.ListTest.deleteNodeByIndex" />
+        <item itemvalue="JUnit.ListTest.deleteNodeByValue" />
         <item itemvalue="JUnit.ListTest" />
-        <item itemvalue="JUnit.MyHashTableTest" />
-        <item itemvalue="JUnit.MyHashTableTest.getByKey" />
-        <item itemvalue="JUnit.MyHashTableTest.addElem" />
       </list>
     </recent_temporary>
   </component>
@@ -152,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611082057970</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Прикрутил дженерики">
+      <created>1611219599705</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611219599705</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +195,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Структура Maven" />
     <MESSAGE value="Исправление 4ого пункта" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправление 4ого пункта" />
+    <MESSAGE value="Прикрутил дженерики" />
+    <option name="LAST_COMMIT_MESSAGE" value="Прикрутил дженерики" />
   </component>
 </project>

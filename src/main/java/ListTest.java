@@ -1,115 +1,86 @@
 import org.junit.Assert;
-import org.junit.Before;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class ListTest {
-    private MyHashTable table;
+    private List testList;
 
-    @org.junit.jupiter.api.Test
+    @BeforeEach
+    public void setUp() {
+        this.testList = new List();
+    }
+
+    @Test
     void addToTail() {
-        this.table = new MyHashTable(10, 10);
+        int regionCode = 73;
+        String regionName = "Ульяновская область";
 
-        int newVal = 10;
+        this.testList.addToTail(regionCode, regionName);
 
-        List testList = new List();
-        testList.addToTail(newVal);
+        int index = testList.findByValue(regionName);
 
-        Node nodeToFind = testList.findNodeByValue(newVal);
-
-        //проверяем, что нода найдена (метод возвратил не null-значение)
-        Assert.assertNotNull(nodeToFind);
-
-        //и что ее значение равно 10
-        Assert.assertEquals(newVal, nodeToFind.getValue());
+        //проверяем, что такой регион есть в списке
+        Assert.assertTrue(index != -1);
     }
 
-    @org.junit.jupiter.api.Test
-    void findNodeByValue() {
-        this.table = new MyHashTable(10, 10);
-        int index = 0;
-        int newVal = 1000;
 
-        List testList = new List();
-        testList.addElementByIndex(index, newVal);
-
-        Node nodeToFind = testList.findNodeByValue(newVal);
-
-        //проверяем, что нода найдена (метод возвратил не null-значение)
-        Assert.assertNotNull(nodeToFind);
-
-        //и что ее значение равно 30
-        Assert.assertEquals(newVal, nodeToFind.getValue());
-    }
-
-    @org.junit.jupiter.api.Test
+    @Test
     void deleteNodeByValue() {
-        this.table = new MyHashTable(10, 10);
         int index = 0;
-        int newVal = 2000;
+        Integer regionCode = 73;
+        String regionName = "Ульяновская область";
 
-        List testList = new List();
-        testList.addElementByIndex(index, newVal);
+        this.testList.addElementByIndex(index, regionCode, regionName);
 
-        Node nodeToFind = testList.findNodeByValue(newVal);
+        index = this.testList.findByValue(regionName);
 
-        //проверяем, что нода найдена (метод возвратил не null-значение)
-        Assert.assertNotNull(nodeToFind);
-
-        //и что ее значение равно 2000
-        Assert.assertEquals(newVal, nodeToFind.getValue());
+        //проверяем, что такой регион есть в списке
+        Assert.assertTrue(index != -1);
 
         //удаляем ноду
-        testList.deleteNodeByValue(newVal);
+        this.testList.deleteNodeByValue(regionName);
 
-        nodeToFind = testList.findNodeByValue(newVal);
+        index = this.testList.findByValue(regionName);
 
-        //проверяем, что нода не найдена
-        Assert.assertEquals(null,nodeToFind);
+        //проверяем, что такого региона нет в списке
+        Assert.assertTrue(index == -1);
 
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void deleteNodeByIndex() {
-        this.table = new MyHashTable(10, 10);
-        int index = 0;
-        int newVal = 3000;
+        int newIndex = 0;
+        Integer regionCode = 73;
+        String regionName = "Ульяновская область";
 
         List testList = new List();
-        testList.addElementByIndex(index, newVal);
+        this.testList.addElementByIndex(newIndex, regionCode, regionName);
 
-        Node nodeToFind = testList.findNodeByValue(newVal);
+        int index = this.testList.findByValue(regionName);
 
-        //проверяем, что нода найдена (метод возвратил не null-значение)
-        Assert.assertNotNull(nodeToFind);
-
-        //и что ее значение равно 3000
-        Assert.assertEquals(newVal, nodeToFind.getValue());
+        //проверяем, что такой регион есть в списке
+        Assert.assertTrue(index != -1);
 
         //удаляем ноду
-        testList.deleteNodeByIndex(index);
+        this.testList.deleteNodeByIndex(newIndex);
 
-        nodeToFind = testList.findNodeByValue(newVal);
+        index = this.testList.findByValue(regionName);
 
-        //проверяем, что нода не найдена
-        Assert.assertEquals(null,nodeToFind);
+        //проверяем, что такого региона нет в списке
+        Assert.assertTrue(index == -1);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void addElementByIndex() {
-        this.table = new MyHashTable(10, 10);
         int index = 0;
-        int newVal = 30;
+        Integer regionCode = 73;
+        String regionName = "Ульяновская область";
 
-        List testList = new List();
-        testList.addElementByIndex(index, newVal);
+        this.testList.addElementByIndex(index, regionCode, regionName);
 
-        Node nodeToFind = testList.findNodeByValue(newVal);
+        boolean regionInList = this.testList.contains(regionName);
 
-        //проверяем, что нода найдена (метод возвратил не null-значение)
-        Assert.assertNotNull(nodeToFind);
-
-        //и что ее значение равно 30
-        Assert.assertEquals(newVal, nodeToFind.getValue());
+        //проверяем, что нода в списке есть
+        Assert.assertTrue(regionInList);
     }
 }

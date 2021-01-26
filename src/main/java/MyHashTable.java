@@ -14,65 +14,61 @@ public class MyHashTable {
 
     public void rebuildHashTable() {
         //получаем все значения из текущей таблицы
-        ArrayList<int[]> arKeysValues = getArrayOfKeyValue();
+        ArrayList<Object[]> arKeysValues = getArrayOfKeyValue();
         int oldLength = this.hashTable.length;
         this.hashTable = new List[++oldLength];
 
-        for (int[] arKeyValue:arKeysValues) {
-            int index = hash(arKeyValue[1]);
-            this.hashTable[index] = new List();
-            this.hashTable[index].addToTail(arKeyValue[1]);
+        for (Object[] arKeyValue:arKeysValues) {
+            int index = hash(arKeyValue[0].hashCode());
+            if (this.hashTable[index] == null) {
+                this.hashTable[index] = new List();
+            }
+            this.hashTable[index].addToTail((Integer) arKeyValue[0], (String) arKeyValue[1]);
         }
 
     }
-    public int hash(int newVal) {
-        return newVal % this.hashTable.length;
+    private int hash(int hashCode) {
+        return hashCode % this.hashTable.length;
     }
 
-    public void addElem(int newVal) {
-        int index = hash(newVal);
-        this.hashTable[index].addToTail(newVal);
+    public void addElem(Integer key, String value) {
+        int index = this.hash(key.hashCode());
+        this.hashTable[index].addToTail(key, value);
         if (this.hashTable[index].getListSize() > this.maxListElemCount) {
             this.rebuildHashTable();
         }
     }
 
     /**
-     * Получение эл-та по ключу, это как? Возвратить весь список, привязанный к эл-ту хэштаблицы?
-     * Не знаю, каким образом, зная ключ, получить элемент. Обратной хэш функции для остатка от деления не существует
+     * Получение элемента по ключу
      */
-    public List getByKey(int index) {
-        if (index < this.hashTable.length) {
-            return this.hashTable[index];
-        }
-
-        return null;
+    public String getByKey(Integer key) {
+        int index = this.hash(key.hashCode());
+        return this.hashTable[index].getValueByKey(key);
     }
 
     /**
-     * Удаление эл-та по ключу, тоже самое: не могу из ключа однозначно получить само значение
-     * Решил просто обнулять весь список
+     * Удаление эл-та по ключу
      */
 
-    public void deleteByIndex(int index) {
-        if (index < this.hashTable.length) {
-            this.hashTable[index] = null;
-        }
+    public void deleteByKey(Integer key) {
+        int index = this.hash(key.hashCode());
+        this.hashTable[index].deleteNodeByKey(key);
     }
 
-    public int[] getKeys() {
-        int[] arKeys = new int[this.hashTable.length];
+    public ArrayList<Integer> getKeys() {
+        ArrayList<Integer> keyList = new ArrayList<>();
         for (int i = 0; i < this.hashTable.length; i++) {
-            arKeys[i] = i;
+            keyList.addAll(this.hashTable[i].getKeys());
         }
 
-        return arKeys;
+        return keyList;
     }
 
-    public ArrayList<int[]> getArrayOfKeyValue() {
-        ArrayList <int[]> arKeyValue = new ArrayList<int[]>();
+    public ArrayList<Object[]> getArrayOfKeyValue() {
+        ArrayList <Object[]> arKeyValue = new ArrayList<>();
         for (int i = 0; i < this.hashTable.length; i++) {
-            this.hashTable[i].getValues(arKeyValue, i);
+            this.hashTable[i].getValues(arKeyValue);
         }
 
         return arKeyValue;

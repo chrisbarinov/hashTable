@@ -1,10 +1,12 @@
-public class Node <T> {
-    private T val;
+public class Node <K, V> {
+    private K key;
+    private V val;
 
     private Node nextNode = null;
     private Node prevNode = null;
 
-    public Node(T val) {
+    public Node(K key, V val) {
+        this.setKey(key);
         this.setValue(val);
     }
 
@@ -16,8 +18,12 @@ public class Node <T> {
         this.prevNode = prevNode;
     }
 
-    public T getValue() {
+    public V getValue() {
         return this.val;
+    }
+
+    public K getKey() {
+        return this.key;
     }
 
     public Node getNextNode() {
@@ -28,7 +34,10 @@ public class Node <T> {
         return this.prevNode;
     }
 
-    public void setValue(T val) {
+    public void setKey(K key) {
+        this.key = key;
+    }
+    public void setValue(V val) {
         this.val = val;
     }
 
